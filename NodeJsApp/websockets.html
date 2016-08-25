@@ -1,0 +1,25 @@
+<html>
+<script>
+var ws = new WebSocket('ws:localhost:1234', 'echo-protocol');
+
+function sendMessage(){
+    var message = "hola mundo!";
+    ws.send(message);
+}
+
+ws.addEventListener("message", function(e) {
+    // The data is simply the message that we're sending back
+    var msg = e.data;
+
+    // Append the message
+    alert(msg);
+});
+
+</script>
+
+<body>
+<div id="chatlog"></div>
+<input id="message" type="text">
+<input type="button" value="enviar" onclick="sendMessage()">
+</html>
+</body>

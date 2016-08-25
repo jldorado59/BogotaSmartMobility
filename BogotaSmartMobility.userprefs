@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RestClientTest.cs">
+    <Files>
+      <File FileName="Assets\Scripts\RestClientTest.cs" Line="115" Column="1" />
+      <File FileName="Assets\Scripts\JsonData.cs" Line="21" Column="29" />
+      <File FileName="Assets\Plugins\RestPlugin\HttpRestClient.cs" Line="24" Column="1" />
+      <File FileName="Assets\Example\EchoTest.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\RestPlugin\WebSocketRestClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\WebSockets\WebSocket.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\RestPlugin\IRestClient.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

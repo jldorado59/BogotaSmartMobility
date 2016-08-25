@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9DB5072D-388F-0A4A-FD35-88A4FD43C0CE}") = "BogotaSmartMobility", "Assembly-CSharp-firstpass.csproj", "{0249067F-9BB2-8B9B-14E2-C384E55A1D59}"
+EndProject
+Project("{9DB5072D-388F-0A4A-FD35-88A4FD43C0CE}") = "BogotaSmartMobility", "Assembly-CSharp.csproj", "{A8E7E637-11F7-62E0-1F81-8BEFB8F5D473}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0249067F-9BB2-8B9B-14E2-C384E55A1D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0249067F-9BB2-8B9B-14E2-C384E55A1D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0249067F-9BB2-8B9B-14E2-C384E55A1D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0249067F-9BB2-8B9B-14E2-C384E55A1D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E7E637-11F7-62E0-1F81-8BEFB8F5D473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E7E637-11F7-62E0-1F81-8BEFB8F5D473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E7E637-11F7-62E0-1F81-8BEFB8F5D473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E7E637-11F7-62E0-1F81-8BEFB8F5D473}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
