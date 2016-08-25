@@ -17,6 +17,7 @@ public class Point
 
 public class Feature
 {
+    public int id { get; set; }
     public int pisos { get; set; }
     public Centroid centroid { get; set; }
     public List<Point> points { get; set; }

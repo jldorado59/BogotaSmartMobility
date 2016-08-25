@@ -57,10 +57,11 @@ function getDataNormalized(source, bounds)
 	
 	for(i=0; i < source.features.length; i++)
 	{
+		var objectid = source.features[i].properties.objectid;
 		var numpisos = source.features[i].properties.connpisos;
 		var coords = source.features[i].geometry.coordinates[0];		
 		
-		var geometry = { pisos:numpisos, centroid:null, points:[]}
+		var geometry = { id:objectid, pisos:numpisos, centroid:null, points:[]}
 		
 		for(j=0; j < coords.length; j++)
 		{			
@@ -81,6 +82,22 @@ function getDataNormalized(source, bounds)
 	return features;
 }
 
+function getFeaturesByRadio(features, position, radio)
+{
+	var zonefeatures = []; 
+	for(i=0; i < features.length; i++)
+	{
+		
+		if(	features[i].centroid.x > position.x - radio && features[i].centroid.x < position.x + radio && 
+			features[i].centroid.z > position.z - radio && features[i].centroid.z < position.z + radio )
+		{
+			zonefeatures.push(features[i]);
+		}		
+	}	
+	
+	return zonefeatures;
+}
+
 function getFullJson(features)
 {
 	var fulljson = "{ \"features\":["; 
@@ -90,6 +107,7 @@ function getFullJson(features)
 		var points = features[i].points;
 		
 		fulljson += "{";
+		fulljson += "\"id\":" + features[i].id + ",";	
 		fulljson += "\"pisos\":" + features[i].pisos + ",";	
 		fulljson += "\"centroid\":{\"x\":" + features[i].centroid.x + ", \"z\":" + features[i].centroid.z + "},"
 		fulljson += "\"points\":["
@@ -123,13 +141,19 @@ var contents = fs.readFileSync('data.json', "utf-8");
 var source = JSON.parse(contents);
 var bounds = getBounds(source);
 var data = getDataNormalized(source, bounds);
-var fulljson = getFullJson(data);
-  
-console.log("Ready!");  
-  
-app.get('/data', function(req, res) {  
-  
-  res.status(200).json(fulljson)
+//var fulljson = getFullJson(data); 
+
+console.log("ready!");
+
+app.get('/data', function(req, res) {    
+
+	console.log("x:"+req.query.x + ",z:" + req.query.z + ",radio:" + req.query.radio);
+	var pos = { x: req.query.x, z: req.query.z };	
+	var features = getFeaturesByRadio(data, pos, req.query.radio);
+	var json = getFullJson(features);
+	console.log("response");
+	res.status(200).json(json);
+   
 })
  
 app.listen(3000)
